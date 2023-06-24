@@ -6,7 +6,9 @@ export const getServerSideProps = async (context) => {
   const host = context.req.headers.host;
   const getServerPort = host.split(":")[1];
   const id = context.params.burgerId;
-  const apiUrl = `http://localhost:${getServerPort}/api/getMongoData/${id}`;
+  // const apiUrl = `http://localhost:${getServerPort}/api/getMongoData/${id}`;
+  const apiUrl = `https://nextjs-ssr-rose.vercel.app//api/getMongoData/${id}`;
+  // https://nextjs-ssr-rose.vercel.app/
 
   try {
     const res = await fetch(apiUrl);
