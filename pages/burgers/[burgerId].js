@@ -32,7 +32,7 @@ export default BurgerParams
 
 export const getStaticPaths = async () => {
   // const res = await fetch('http://localhost:3005/api/getMongoData')
-  const res = await fetch(`https://nextjs-ssr-rose.vercel.app/api/getMongoData/${id}`)
+  const res = await fetch(`https://nextjs-ssr-rose.vercel.app/api/getMongoData`)
   const data = await res.json()
 
   const paths = data.map(burger => {
