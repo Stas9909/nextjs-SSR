@@ -25,11 +25,6 @@ const Burgers = ({ data }) => {
       <h1>Burgers</h1>
       {data.map((burger) => (
         <Link
-          // href={{
-          //   pathname: `/burgers/${burger.id}`,
-          //   // pathname: `/burgers/[burgerId]`,
-          //   query: { host },
-          // }}
           href={`/burgers/${burger.id}`}
           key={burger._id}
         >
