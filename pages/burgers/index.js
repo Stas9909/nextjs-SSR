@@ -8,7 +8,7 @@ export const getServerSideProps = async (ctx) => {
   const getServerPort = host.split(":")[1];
 
   // const res = await fetch(`http://localhost:${getServerPort}/api/getMongoData`);
-  const res = await fetch(`https://nextjs-ssr-rose.vercel.app/api/getMongoData`);
+  const res = await fetch(`${process.env.API_HOST}`);//env.local
   const data = await res.json();
 
   return {

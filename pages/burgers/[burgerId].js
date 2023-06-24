@@ -31,8 +31,8 @@ const BurgerParams = ({ burger }) => {
 export default BurgerParams
 
 export const getStaticPaths = async () => {
-  // const res = await fetch('http://localhost:3005/api/getMongoData')
-  const res = await fetch(`https://nextjs-ssr-rose.vercel.app/api/getMongoData`)
+  // const res = await fetch(`https://nextjs-ssr-rose.vercel.app/api/getMongoData`)
+  const res = await fetch(`${process.env.API_HOST}`)
   const data = await res.json()
 
   const paths = data.map(burger => {
@@ -50,8 +50,8 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const id = context.params.burgerId
   try {
-    // const res = await fetch(`http://localhost:3005/api/getMongoData/${id}`)
-    const res = await fetch(`https://nextjs-ssr-rose.vercel.app/api/getMongoData/${id}`)
+    // const res = await fetch(`https://nextjs-ssr-rose.vercel.app/api/getMongoData/${id}`)
+    const res = await fetch(`${process.env.API_HOST}/${id}`)
     const data = await res.json()
     const burger = data.find(burger => burger.id === id)
 
